@@ -1,0 +1,54 @@
+<div class="container">
+  <h1>Uredi Šifrarnik </h1><br>
+  <form [formGroup]="addForm" novalidate class="form">
+    <div id="divAll">
+      <div style="float: left;">
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Oznaka šifrarnika *</mat-label>
+            <input matInput type="text" formControlName="oznaka" placeholder="Oznaka" name="oznaka" class="form-control" id="oznaka">
+          </mat-form-field>
+        </p>
+      </div>
+      <div style="float: right; width: 400px;">
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Naziv šifrarnika *</mat-label>
+            <input matInput type="text" formControlName="naziv" placeholder="Naziv" name="naziv" class="form-control" id="naziv">
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+
+    <div>
+      <p>
+        <mat-form-field appearance="legacy" style=" width: 900px; ">
+          <mat-label>Opis šifrarnika *</mat-label>
+          <input matInput type="text" formControlName="opis" placeholder="Opis" name="opis" class="form-control" id="opis">
+        </mat-form-field>
+      </p>
+    </div>
+
+    <hr style="margin-top: 5%; border: 1.5px solid black;">
+    <div id="divCheckBox">
+      <div style="float: left;">
+        <p>
+          <mat-checkbox indeterminate="false" formControlName="programerski">Programerski šifrarnik?</mat-checkbox>
+        </p>
+      </div>
+
+      <div style="float: right; margin-right: 26%;">
+        <p>
+          <mat-checkbox indeterminate="false" formControlName="kesiranje" to>Dozvoli keširanje?</mat-checkbox>
+        </p>
+      </div>
+    </div>
+
+    <div style="float: right;">
+      <button mat-button color="primary" (click)="update()">SPREMI</button>
+      <button mat-button color="warn">IZBRIŠI</button>
+      <button mat-button color="warn" (click)="odbaci()">ODBACI</button>
+    </div>
+
+  </form>
+</div>

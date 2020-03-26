@@ -1,0 +1,30 @@
+mat-form-field {
+    width: 400px;
+}
+
+
+.container{
+    width: 900px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#divCheckBox{
+    width: 900px;
+    height: 100px;
+    padding-top: 40px;
+}
+
+
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border: 1.5px solid gray;
+  }
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-button-focus-overlay, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-focused, .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+    background-color: #4CAF50 !important; /* Red background for example */
+}
+
+::ng-deep .spremiBtn{
+    color: #4CAF50 !important;
+}

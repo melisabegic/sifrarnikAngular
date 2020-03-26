@@ -1,0 +1,52 @@
+<div class="container">
+  <h1>Dodaj Podstavku Šifrarnika</h1><br>
+  <form [formGroup]="addForm" novalidate class="form">
+    <div id="divAll">
+      <div style="float: left;">
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Oznaka šifrarnika *</mat-label>
+            <input matInput type="text" formControlName="oznaka" placeholder="Oznaka" name="oznaka" class="form-control"
+              id="oznaka">
+          </mat-form-field>
+        </p>
+      </div>
+      <div style="float: right; width: 400px;">
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Naziv šifrarnika *</mat-label>
+            <input matInput type="text" formControlName="naziv" placeholder="Naziv" name="naziv" class="form-control"
+              id="naziv">
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+
+    <div id="divCheckBox">
+      <div style="float: left;">
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Preduzeće *</mat-label>
+            <input matInput type="text" formControlName="preduzece" placeholder="Preduzeće" name="preduzece"
+              class="form-control" id="preduzece">
+          </mat-form-field>
+        </p>
+      </div>
+      <div style="float: right; width: 400px;">
+        <p>
+          <mat-form-field appearance="legacy">
+            <mat-label>Redni broj</mat-label>
+            <input matInput type="number" formControlName="redniBroj" placeholder="Redni Broj" name="redniBroj"
+              class="form-control" id="redniBroj">
+          </mat-form-field>
+        </p>
+      </div>
+    </div>
+
+    <div style="float: right;">
+      <button mat-button color="primary" class="spremiBtn" (click)="onSumbit()">SPREMI</button>
+      <button mat-button color="warn" (click)="odbaci()">ODBACI</button>
+    </div>
+
+  </form>
+</div>

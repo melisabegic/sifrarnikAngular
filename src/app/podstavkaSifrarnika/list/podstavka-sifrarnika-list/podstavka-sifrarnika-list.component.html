@@ -1,0 +1,41 @@
+<h1 style="margin-left: 120px;">Lista Podstavki Šifrarnika</h1><br>
+<div id="divall">
+  <button class="button" (click)="addPodstavka()" >DODAJ NOVI</button><br>
+</div>
+<div>
+  <a style="margin-left: 120px;" [routerLink]="['/sifrarnikList/']"><b>{{sifrarnik.oznaka}}   </b></a>
+  <a style="margin-left: 10px;">/</a>
+  <a style="margin-left: 10px;" [routerLink]="['/sifrarnikList/']"><b>{{stavkaSifrarnika.oznaka}}</b></a>
+</div>
+<div>
+  <p id="searchInput">
+      <mat-form-field appearance="legacy">
+          <mat-label>Traži...</mat-label>
+          <input matInput placeholder="Traži..." [(ngModel)]="searchText">
+      </mat-form-field>
+  </p>
+</div>
+<div id="tableDiv">
+  <table>
+      <tr>
+          <th></th>
+          <th class="thSize">Oznaka šifre</th>
+          <th class="thSize">Naziv šifre</th>
+          <th class="thSize">Preduzece</th>
+          <th>Redni broj</th>
+          <th>Kreirana</th>
+      </tr>
+      <tr *ngFor="let mydata of podstavkeList | filter:searchText">
+          <td><button id="editBtn" (click)="editPodstavka(mydata)" ><i
+                      class="material-icons editHover">edit</i></button>
+              <button id="deleteBtn" (click)="izbrisiPodstavku(mydata)" ><i
+                      class="material-icons deleteHover">delete</i></button> </td>
+
+          <td>{{mydata.oznaka}}</td>
+          <td>{{mydata.naziv}}</td>
+          <td>{{mydata.preduzece}}</td>
+          <td>{{mydata.redniBroj}}</td>
+          <td>{{mydata.datumKreiranja | date : 'MM/dd/yyyy'}}</td>
+      </tr>
+  </table>
+</div>

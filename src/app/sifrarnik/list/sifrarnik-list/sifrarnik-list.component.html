@@ -1,0 +1,39 @@
+<h1 style="margin-left: 120px; float: left;">Lista Šifrarnika</h1><br>
+
+<div id="divall">
+    <button class="button" (click)="addSifrarnik()">DODAJ NOVI</button><br>
+</div>
+<div>
+    <p id="searchInput">
+        <mat-form-field appearance="legacy">
+            <mat-label>Traži...</mat-label>
+            <input matInput placeholder="Traži..." [(ngModel)]="searchText">
+        </mat-form-field>
+    </p>
+</div>
+<div id="tableDiv">
+    <table>
+        <tr>
+            <th></th>
+            <th class="thSize">Šifra</th>
+            <th class="thSize">Naziv</th>
+            <th class="thSize">Opis</th>
+            <th>Programerski</th>
+            <th>Keširanje</th>
+            <th>Kreiran</th>
+        </tr>
+        <tr *ngFor="let mydata of sifrarnikList | filter:searchText">
+            <td><button id="editBtn" (click)="editSifrarnik(mydata)"><i class="material-icons editHover" >edit</i></button>
+                <button id="deleteBtn" (click)="izbrisiSifrarnik(mydata)"><i class="material-icons deleteHover">delete</i></button> </td>
+
+            <td ><a [routerLink]="['/stavkaLista/', mydata.sifrarnikId]" class="aLinkStyle" >{{mydata.oznaka}}</a></td>
+            <td ><a [routerLink]="['/stavkaLista/', mydata.sifrarnikId]" class="aLinkStyle" >{{mydata.naziv}}</a></td>
+            <td ><a [routerLink]="['/stavkaLista/', mydata.sifrarnikId]" class="aLinkStyle" >{{mydata.opis}}</a></td>
+            <td>{{mydata.programerski}}</td>
+            <td>{{mydata.kesiranje}}</td>
+            <td>{{mydata.datumKreiranja | date : 'MM/dd/yyyy'}}</td>
+
+
+        </tr>
+    </table>
+</div>
